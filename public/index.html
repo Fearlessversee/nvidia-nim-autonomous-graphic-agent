@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taliyo DesignOS — Autonomous Creative Intelligence & 3D Poster Engine</title>
+  <meta name="description"
+    content="Taliyo DesignOS is an autonomous creative intelligence platform. Ingests raw marketing briefs and synthesizes 6 distinct design systems, 8K 3D visual renders, and WCAG certified color palettes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- AMBIENT CANVAS BACKGROUND -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+  <div class="canvas-grid-bg" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <span class="brand-glyph">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M9 21V9" />
+          </svg>
+        </span>
+        <span class="brand-name">Taliyo <span class="text-accent">DesignOS</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#interactive-studio" class="nav-link">Studio</a>
+        <a href="#renders-gallery" class="nav-link">Renders</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#comparison" class="nav-link">Benchmark</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://t.me/GraphicDeisgnerHolidayAGent_bot" target="_blank" class="nav-btn-telegram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Telegram Bot</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO & INTERACTIVE PROMPT FORGE (PRIMARY FOCAL POINT)
+       ========================================================================== -->
+  <section id="interactive-studio" class="hero-studio-section">
+    <div class="site-container">
+
+      <div class="hero-header">
+        <div class="hero-tag-badge">
+          <span class="pulse-indicator"></span>
+          <span>AUTONOMOUS CREATIVE INTELLIGENCE</span>
+        </div>
+
+        <h1 class="hero-title">
+          From Brief to <span class="text-gradient">Production 3D System</span> in Seconds
+        </h1>
+
+        <p class="hero-lead">
+          Ingests your raw creative intent, extracts verified cultural trends, and synthesizes 
+          isolated 8K 3D visual centerpieces, mathematical CIE-Lab palettes, and client pitch rationales.
+        </p>
+      </div>
+
+      <!-- Live Interactive Prompt Studio Workspace -->
+      <div class="forge-container">
+        
+        <!-- Prompt Control Bar -->
+        <div class="forge-prompt-bar">
+          <div class="fpb-left">
+            <svg class="icon-sparkle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <input type="text" id="user-prompt-input" class="forge-input" placeholder="Type any design brief or select a preset..." value="Specialty roasted coffee brand luxury dark packaging with warm café bokeh lighting" />
+          </div>
+
+          <button id="btn-generate-concept" class="btn-forge-action">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Synthesize System</span>
+          </button>
+        </div>
+
+        <!-- Presets Row -->
+        <div class="forge-presets-row">
+          <span class="presets-label">Quick Archetypes:</span>
+          <div class="presets-pills-wrap">
+            <button class="preset-chip active" data-preset="coffee">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+              <span>Coffee Macro</span>
+            </button>
+            <button class="preset-chip" data-preset="festive">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+              <span>Diwali Festive</span>
+            </button>
+            <button class="preset-chip" data-preset="luxury">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 12L2 9z"></path><path d="M11 3 8 9l4 12 4-12-3-6"></path><path d="M2 9h20"></path></svg>
+              <span>Gold Jewelry</span>
+            </button>
+            <button class="preset-chip" data-preset="tech">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Tech SaaS</span>
+            </button>
+            <button class="preset-chip" data-preset="podiums">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              <span>Marble Podium</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Two-Column Clean Workspace -->
+        <div class="forge-workspace">
+          
+          <!-- Left: Design Specifications & Color Science -->
+          <div class="forge-specs-panel">
+            
+            <div class="fsp-header">
+              <div>
+                <span class="fsp-tag" id="studio-concept-archetype">ARCHETYPE // MONASTIC MINIMAL</span>
+                <h3 class="fsp-title" id="studio-concept-title">Obsidian & Warm Amber Roast</h3>
+              </div>
+              <div class="fsp-score-badge">
+                <span class="score-val" id="studio-score">98.6</span>
+                <span class="score-lbl">SEMIOTIC INDEX</span>
+              </div>
+            </div>
+
+            <p class="fsp-desc" id="studio-concept-desc">
+              High-density matte obsidian background featuring a central macro floating coffee bean with warm golden café lighting. Eliminates chaotic retail noise in favor of premium artisanal authority.
+            </p>
+
+            <!-- 5-Layer Color Swatches -->
+            <div class="fsp-section">
+              <div class="fsp-section-head">
+                <span>Color Science (CIE-Lab Tested)</span>
+                <span class="meta-pass">WCAG 2.2 AAA</span>
+              </div>
+              <div class="swatches-row" id="studio-swatches">
+                <!-- Injected via script -->
+              </div>
+            </div>
+
+            <!-- Typography & Whitespace -->
+            <div class="fsp-grid-meta">
+              <div class="meta-item">
+                <span class="meta-lbl">TYPOGRAPHY PAIRING</span>
+                <span class="meta-val" id="studio-typo">Neue Haas Grotesk + JetBrains Mono</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-lbl">MARKET WHITESPACE</span>
+                <span class="meta-val" id="studio-whitespace">94% visual differentiation</span>
+              </div>
+            </div>
+
+            <!-- Client Pitch Rationale -->
+            <div class="fsp-rationale-card">
+              <div class="frc-head">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>Client Defense Rationale</span>
+              </div>
+              <p class="frc-body" id="studio-rationale">
+                "The dark matte backdrop establishes uncompromising luxury, while the isolated 3D centerpiece immediately communicates tactile craft without relying on generic stock cliches."
+              </p>
+            </div>
+
+            <!-- Copy Action -->
+            <div class="fsp-actions">
+              <button class="btn-copy-w3c" id="btn-copy-tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy W3C Tokens JSON</span>
+              </button>
+              <a href="https://t.me/GraphicDeisgnerHolidayAGent_bot" target="_blank" class="btn-open-telegram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>Generate in Telegram</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: 3D Visual Viewport -->
+          <div class="forge-viewport-panel">
+            <div class="viewport-box">
+              <div class="vp-header">
+                <span class="vp-indicator"></span>
+                <span class="vp-title">8K Physical 3D Viewport</span>
+                <span class="vp-tag">Zero Text</span>
+              </div>
+
+              <div class="vp-image-wrap">
+                <img id="studio-render-preview" src="assets/renders/coffee_bean_hero.png" alt="3D Physical Render Preview" />
+              </div>
+
+              <div class="vp-prompt-box">
+                <span class="vpb-label">3D SYNTHESIS FORMULA</span>
+                <p class="vpb-text" id="studio-crafted-prompt">
+                  "Render a 3D roasted coffee bean with realistic textures, high-quality lighting, and a neutral background to showcase the coffee brand's product."
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 02: 3D PHYSICAL RENDERS SHOWCASE
+       ========================================================================== -->
+  <section id="renders-gallery" class="section-block bg-darker">
+    <div class="site-container">
+      
+      <div class="section-header">
+        <span class="section-label">CURATED 3D BENCHMARKS</span>
+        <h2 class="section-heading">Engineered for High-Converting Ad Formats</h2>
+        <p class="section-subheading">
+          Every render is generated with dark studio backdrops and calibrated lighting, giving you pristine negative space to drop typography and logos.
+        </p>
+      </div>
+
+      <div class="gallery-clean-grid">
+        
+        <!-- Card 1: Festive Diya -->
+        <div class="clean-card">
+          <div class="cc-media">
+            <img src="assets/renders/festive_diya.png" alt="3D Royal Brass Diya" loading="lazy" />
+          </div>
+          <div class="cc-body">
+            <div class="cc-meta">
+              <span class="cc-tag">Festive & Cultural</span>
+              <span class="cc-score">9.8 Semiotic</span>
+            </div>
+            <h4 class="cc-title">Royal Brass Diya with Floating Sparkles</h4>
+            <p class="cc-desc">Intricate terracotta and brass filigree with warm flickering candle flame and dark obsidian negative space.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Luxury Jewelry -->
+        <div class="clean-card">
+          <div class="cc-media">
+            <img src="assets/renders/luxury_jewelry.png" alt="3D Gold Filigree Jewelry" loading="lazy" />
+          </div>
+          <div class="cc-body">
+            <div class="cc-meta">
+              <span class="cc-tag">Luxury & Metals</span>
+              <span class="cc-score">10.0 Semiotic</span>
+            </div>
+            <h4 class="cc-title">24K Royal Gold Intricate Filigree</h4>
+            <p class="cc-desc">Diamond caustics with brushed metallic rim lighting against deep velvet black for high-ticket campaigns.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Minimal Podium -->
+        <div class="clean-card">
+          <div class="cc-media">
+            <img src="assets/renders/real_estate_hero.png" alt="3D Carrara Marble Podium" loading="lazy" />
+          </div>
+          <div class="cc-body">
+            <div class="cc-meta">
+              <span class="cc-tag">D2C & Real Estate</span>
+              <span class="cc-score">9.5 Semiotic</span>
+            </div>
+            <h4 class="cc-title">Carrara Marble Pedestal with Halo Glow</h4>
+            <p class="cc-desc">Titanium rim with circular LED ring lighting, engineered with 60% top space for real estate & product ads.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Tech SaaS -->
+        <div class="clean-card">
+          <div class="cc-media">
+            <img src="assets/renders/tech_saas.png" alt="3D Glassmorphism Holographic Cube" loading="lazy" />
+          </div>
+          <div class="cc-body">
+            <div class="cc-meta">
+              <span class="cc-tag">Tech & Enterprise</span>
+              <span class="cc-score">9.2 Semiotic</span>
+            </div>
+            <h4 class="cc-title">Holographic Glassmorphic Data Prism</h4>
+            <p class="cc-desc">Refractive cyan and violet caustics with floating coordinate grid, optimized for SaaS hero banners.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 03: 4-PILLAR CAPABILITIES
+       ========================================================================== -->
+  <section id="capabilities" class="section-block">
+    <div class="site-container">
+
+      <div class="section-header">
+        <span class="section-label">SYSTEM CAPABILITIES</span>
+        <h2 class="section-heading">Deterministic Creative Intelligence</h2>
+        <p class="section-subheading">
+          Automates the heavy research, palette balancing, and 3D visual generation so you operate purely as an executive creative director.
+        </p>
+      </div>
+
+      <div class="capabilities-grid">
+        
+        <div class="cap-card">
+          <div class="cap-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3 class="cap-title">T-2 Daily Event Radar</h3>
+          <p class="cap-desc">Scans 20+ national and global holidays in advance and dispatches full campaign briefs directly to your Telegram bot.</p>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          </div>
+          <h3 class="cap-title">6 Distinct Archetypes</h3>
+          <p class="cap-desc">Explores mutually exclusive visual axes (Minimal, Cyber, Royal, Brutalist, Swiss, Organic) without repetitive cliches.</p>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+          </div>
+          <h3 class="cap-title">CIE-Lab Color Science</h3>
+          <p class="cap-desc">5-layer mathematical color tokens guaranteed to pass WCAG 2.2 AAA accessibility contrast ratios with 1-click copy.</p>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          </div>
+          <h3 class="cap-title">0-Second Telegram Agent</h3>
+          <p class="cap-desc">Interact via casual chat or voice notes. Get complete design systems and 3D visual assets on your phone instantly.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 04: WORKFLOW DELTA BENCHMARK
+       ========================================================================== -->
+  <section id="comparison" class="section-block bg-darker">
+    <div class="site-container">
+
+      <div class="section-header">
+        <span class="section-label">PERFORMANCE BENCHMARK</span>
+        <h2 class="section-heading">Workflow Delta vs Conventional Process</h2>
+        <p class="section-subheading">
+          A measurable shift in studio velocity from manual research friction to pure creative direction.
+        </p>
+      </div>
+
+      <div class="delta-table-wrap">
+        <table class="delta-table">
+          <thead>
+            <tr>
+              <th>Operational Phase</th>
+              <th>Conventional Agency</th>
+              <th class="col-highlight">Taliyo DesignOS Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="dt-phase">Brief & Trend Discovery</td>
+              <td class="dt-old">4–6 hours manual moodboarding</td>
+              <td class="dt-new"><span class="dt-check">✓</span> &lt; 2s automated cultural radar</td>
+            </tr>
+            <tr>
+              <td class="dt-phase">Concept Diversity</td>
+              <td class="dt-old">1–2 safe, deadline-bound ideas</td>
+              <td class="dt-new"><span class="dt-check">✓</span> 6 distinct creative archetypes</td>
+            </tr>
+            <tr>
+              <td class="dt-phase">3D Visual Asset Creation</td>
+              <td class="dt-old">2–3 days in 3D software or stock photos</td>
+              <td class="dt-new"><span class="dt-check">✓</span> 1.8s custom 8K physical render</td>
+            </tr>
+            <tr>
+              <td class="dt-phase">Color & Typography</td>
+              <td class="dt-old">Ad-hoc manual color picking</td>
+              <td class="dt-new"><span class="dt-check">✓</span> WCAG 2.2 AAA certified palettes</td>
+            </tr>
+            <tr>
+              <td class="dt-phase">Client Review Defense</td>
+              <td class="dt-old">Subjective aesthetic justification</td>
+              <td class="dt-new"><span class="dt-check">✓</span> Strategic business pitch rationale</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 05: CTA
+       ========================================================================== -->
+  <section class="section-block">
+    <div class="site-container">
+      <div class="cta-banner">
+        <h2 class="cta-title">Upgrade Your Creative Output Today</h2>
+        <p class="cta-sub">
+          Launch the Taliyo Creative Intelligence Agent on Telegram and start generating production 3D visual packs in seconds.
+        </p>
+        <div class="cta-btn-wrap">
+          <a href="https://t.me/GraphicDeisgnerHolidayAGent_bot" target="_blank" class="btn-cta-launch">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>Launch Telegram Bot</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer id="footer">
+    <div class="site-container footer-flex">
+      <div class="footer-left">
+        <span class="footer-brand">Taliyo <span class="text-accent">DesignOS</span></span>
+        <span class="footer-copy">© 2026 Taliyo Technologies Inc. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://t.me/virajverse" target="_blank" class="footer-link">Contact Admin (@virajverse)</a>
+        <a href="https://t.me/GraphicDeisgnerHolidayAGent_bot" target="_blank" class="footer-link">Telegram Bot</a>
+        <a href="https://instagram.com/fearless.devx" target="_blank" class="footer-link">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
